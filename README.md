@@ -9,17 +9,11 @@ https://tldr.ostera.io/
 ## Basics
 
 cd -change directory
-
 mkdir -make directory
-
 rmdir -remove directory
-
 cat file -Read all file
-
 :> file -clear file contents
-
 cat file | grep -c "if" -count ifs
-
 sed -e 's/test/quest' < file  -replace every test with quest
 
 
