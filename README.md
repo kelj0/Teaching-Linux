@@ -2,6 +2,9 @@
 My personal reference for using linux
 (WORK IN PROGRESS)!
 
+Very nice page that explains almost every command
+https://tldr.ostera.io/
+
 ## Basics
 cd -change directory
 mkdir -make directory
@@ -41,6 +44,3 @@ cat /proc/meminfo – Memory information
 df -h – Show disk usage
 du – Show directory space usage
 free – Show memory and swap usage
-
-
-
