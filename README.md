@@ -15,7 +15,7 @@ https://tldr.ostera.io/
 - :> file -clear file contents
 - cat file | grep -c "if" -count ifs
 - sed -e 's/test/quest' < file  -replace every test with quest
-
+- mv fromPath/ toPath/ 
 
 ### tail
 - tail file.txt       -read last 10 lines of file 'file.txt'
