@@ -33,7 +33,7 @@ https://tldr.ostera.io/
 ### cp
 - `cp picture.jpg picture-02.jpg` -make copy of picture in working dir and name it picture-02
 - `cp /home/chuck/pictures/picture.jpg /home/chuck/backup/picture.jpg`
-- this makes copy of /home/keljo/pictures/picture.jpg in the directory /home/keljo/backup
+   this makes copy of /home/keljo/pictures/picture.jpg in the directory /home/keljo/backup
 
 ### find
 - `find /` -name file.deb -search all disk for file.deb
