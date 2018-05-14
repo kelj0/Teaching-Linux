@@ -17,6 +17,11 @@ https://tldr.ostera.io/
 - `sed -e 's/test/quest' < file`  -replace every test with quest
 - `mv fromPath/ toPath/`    -self explanatory 
 - `bc`       -Calculator
+- `top`      -Display processes
+- `|`        -'pipe' ,send output from one command to other
+- `>`        -'stream' , you can also output in other command(like | ) or you can stream in file
+- `ps -aux`  -Snapshot of currently running processes
+- `kill PID` -Usefull with ps -aux , replace PID with well PID :D, it kills that process
 
 
 ### tail
@@ -33,6 +38,14 @@ https://tldr.ostera.io/
 ### find
 - `find /` -name file.deb -search all disk for file.deb
 - `find .` -name file.deb -search in current folder
+
+## grep
+- `grep --color "finding term" somefile.html`-this will print 'finding term' if there is and highlight it
+- `grep --color -n "finding term" somefile.html` -it will also prefix each matching line with line number
+- `grep --color -n -i "finding term" somefile.html` - use -i for case-insensitive match
+- `grep --color -n -i "finding term" *.html` -use * to expand search to all files that end with .html in cur dir
+- `grep --color -n -i -r "finding term" *.html` - use -r to make search recursively(to subdirectories)
+
 
 ### Date and time
 - `date`   –Show the current date and time
