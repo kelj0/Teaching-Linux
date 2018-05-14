@@ -63,7 +63,7 @@ https://tldr.ostera.io/
 - `du – Show`   -Directory space usage
 - `free`        –Show memory and swap usage
 
-## Adding app to Applications
+### Adding app to Applications
 lets say you want to add tor to applications cause you dont want to type ./start-tor...
 
 first go to folder where tor is
