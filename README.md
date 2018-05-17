@@ -23,23 +23,29 @@ https://tldr.ostera.io/
 - `ps -aux`  -Snapshot of currently running processes
 - `kill PID` -Usefull with ps -aux , replace PID with well PID :D, it kills that process
 
+### ps (Information about running processes)
+`ps aux` - list all running processes
+`ps aux | grep {{string}}` - search for a process that matches string
+`ps -ef | grep python` - list all running python processes ('-ef' is for list all{e} and format it{f})
 
-### tail
+
+
+### tail (Display the last part of a file)
 - `tail file.txt`       -read last 10 lines of file 'file.txt'
 - `tail -n 5 file.txt`  -read last 5 lines of 'file.txt'
 - `tail -f myfile.txt`  -output last 10 lines of file and keep updating if it changes
 - `tail -f access.log | grep 23.10.160.10`  -useful example of using tail and grep to monitor a log in real life
 
-### cp
+### cp (Copy files and folders)
 - `cp picture.jpg picture-02.jpg` -make copy of picture in working dir and name it picture-02
 - `cp /home/chuck/pictures/picture.jpg /home/chuck/backup/picture.jpg`
    this makes copy of /home/keljo/pictures/picture.jpg in the directory /home/keljo/backup
 
-### find
+### find (Find files under the given directory tree, recursively)
 - `find /` -name file.deb -search all disk for file.deb
 - `find .` -name file.deb -search in current folder
 
-## grep
+### grep (Matches patterns in input text. Supports simple patterns and regular expressions)
 - `grep --color "finding term" somefile.html`-this will print 'finding term' if there is and highlight it
 - `grep --color -n "finding term" somefile.html` -it will also prefix each matching line with line number
 - `grep --color -n -i "finding term" somefile.html` - use -i for case-insensitive match
@@ -73,3 +79,11 @@ first go to folder where tor is
 
 `./start-tor-browset.desktop --register-app`
 -congratz tor is under applications/internet
+
+
+### Useful commands when installed
+
+`sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
+`sudo apt-get clean` - remove all .deb (installed) files 
+
+
