@@ -82,6 +82,7 @@ first go to folder where tor is
 
 -congratz tor is under applications/internet
 
+
 ### Add permanent alias
 - open terminal
 - `nano ~/.bashrc` -open bashrc with your text editor
@@ -89,6 +90,24 @@ first go to folder where tor is
 - now you need to save it ( ctrl+x->Y->enter in nano)
 - Execute `. ~/.bashrc` in your terminal(there is space between `.` and `~/.bashrc`)
 - Check your alias with `alias` typed in terminal
+
+### My aliases
+
+For github
+- `alias gaa='git add --all'`
+- `alias gca='git commit -a'`
+- `alias gpl='git pull'`
+- `alias gps='git push'`
+- `alias gst='git status'`
+
+For python
+- `alias python='python3'`
+- `alias ptpython='python -m ptpython'`
+
+For scripts
+- `alias mapit='python /home/keljo/github/LearningPython/Code/CodesFromBooks/Week3/Day20/mapIt.py'` - write mapit croatia to find croatia in google maps
+
+
 
 
 ### Useful commands when installed
