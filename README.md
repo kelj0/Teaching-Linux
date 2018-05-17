@@ -82,6 +82,14 @@ first go to folder where tor is
 
 -congratz tor is under applications/internet
 
+### Add permanent alias
+- open terminal
+- `nano ~/.bashrc` -open bashrc with your text editor
+- add on end  `alias ptpython='python3 -m ptpython'` for example, this is your alias now
+- now you need to save it ( ctrl+x->Y->enter in nano)
+- Execute `. ~/.bashrc` in your terminal(there is space between `.` and `~/.bashrc`)
+- Check your alias with `alias` typed in terminal
+
 
 ### Useful commands when installed
 
