@@ -62,7 +62,7 @@ https://tldr.ostera.io/
 ### Users,hardware usage
 - `w`           –Display who is online
 - `whoami`      –Who you are logged in as
-- `finger user` –Display information about user
+- `finger user` –Display information about user (sudo apt-get install finger)
 - `uname -a`    –Show kernel information
 - `cat /proc/cpuinfo` –CPU information
 - `cat /proc/meminfo` –Memory information
