@@ -24,9 +24,9 @@ https://tldr.ostera.io/
 - `kill PID` -Usefull with ps -aux , replace PID with well PID :D, it kills that process
 
 ### ps (Information about running processes)
-`ps aux` - list all running processes
-`ps aux | grep {{string}}` - search for a process that matches string
-`ps -ef | grep python` - list all running python processes ('-ef' is for list all{e} and format it{f})
+- `ps aux` - list all running processes
+- `ps aux | grep {{string}}` - search for a process that matches string
+- `ps -ef | grep python` - list all running python processes ('-ef' is for list all{e} and format it{f})
 
 
 
@@ -39,6 +39,7 @@ https://tldr.ostera.io/
 ### cp (Copy files and folders)
 - `cp picture.jpg picture-02.jpg` -make copy of picture in working dir and name it picture-02
 - `cp /home/chuck/pictures/picture.jpg /home/chuck/backup/picture.jpg`
+   
    this makes copy of /home/keljo/pictures/picture.jpg in the directory /home/keljo/backup
 
 ### find (Find files under the given directory tree, recursively)
@@ -78,12 +79,13 @@ first go to folder where tor is
 `ls` -to check if there is start-tor-...
 
 `./start-tor-browset.desktop --register-app`
+
 -congratz tor is under applications/internet
 
 
 ### Useful commands when installed
 
-`sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
-`sudo apt-get clean` - remove all .deb (installed) files 
+- `sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
+- `sudo apt-get clean` - remove all .deb (installed) files 
 
 
