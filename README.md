@@ -113,6 +113,6 @@ For scripts
 ### Useful commands when installed
 
 - `sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
-- `sudo apt-get clean` - remove all .deb (installed) files 
-
+- `sudo apt-get clean` - remove all .deb (installed) files
+- `python -m site --user-site` -points you on location of python site-packages directory 
 
