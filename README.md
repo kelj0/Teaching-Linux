@@ -13,7 +13,6 @@ https://tldr.ostera.io/
 - `rmdir`    -remove directory
 - `cat file` -Read all file
 - `:> file`  -clear file contents
-- `cat file | grep -c "if"` -count ifs
 - `sed -e 's/test/quest' < file`  -replace every test with quest
 - `mv fromPath/ toPath/`    -self explanatory 
 - `bc`       -Calculator
@@ -27,6 +26,15 @@ https://tldr.ostera.io/
 - `ps aux` - list all running processes
 - `ps aux | grep {{string}}` - search for a process that matches string
 - `ps -ef | grep python` - list all running python processes ('-ef' is for list all{e} and format it{f})
+
+### cat and tac ( work with text files)
+- `cat file.txt` - display file (read text and sent it your standard output{terminal})
+- `cat file1.txt file2.txt` - display file1 and file2
+- `cat file.txt > newfile.txt` - works as cat file.txt but shell redirects output to newfile.txt
+- `cat file1.txt file2.txt > newcombined.txt` - combine file1 and file2 text and output it to newcombined.txt
+- `cat file1.txt >> file2.txt` - append file1 to file2 ( read file1 and append to end of file2)
+- `tac file.txt` -its same like cat but it reads file line by line BACKWARDS!
+                  tac is really useful when you want output time logs 
 
 
 
@@ -113,6 +121,6 @@ For scripts
 ### Useful commands when installed
 
 - `sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
-- `sudo apt-get clean` - remove all .deb (installed) files
+- `sudo apt-get clean` - remove all .deb instalation files that were downloaded by apt
 - `python -m site --user-site` -points you on location of python site-packages directory 
 
