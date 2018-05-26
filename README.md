@@ -21,7 +21,7 @@ https://tldr.ostera.io/
 - `>`        -'stream' , you can also output in other command(like | ) or you can stream in file
 - `ps -aux`  -Snapshot of currently running processes
 - `kill PID` -Usefull with ps -aux , replace PID with well PID :D, it kills that process
-
+- `sed -e "s/ //g" -i test.txt` - Remove all spaces
 ### ps (Information about running processes)
 - `ps aux` - list all running processes
 - `ps aux | grep {{string}}` - search for a process that matches string
