@@ -8,19 +8,20 @@ https://tldr.ostera.io/
 
 ### Basics
 
-- `cd`       -change directory
-- `mkdir`    -make directory
-- `rmdir`    -remove directory
-- `cat file` -Read all file
-- `:> file`  -clear file contents
-- `sed -e 's/test/quest' < file`  -replace every test with quest
-- `mv fromPath/ toPath/`    -self explanatory 
-- `bc`       -Calculator
-- `top`      -Display processes
-- `|`        -'pipe' ,send output from one command to other
-- `>`        -'stream' , you can also output in other command(like | ) or you can stream in file
-- `ps -aux`  -Snapshot of currently running processes
-- `kill PID` -Usefull with ps -aux , replace PID with well PID :D, it kills that process
+- `cd /usr/test` - change directory
+- `mkdir test`   - make directory
+- `rmdir dir`    - remove directory
+- `rm -rf test`  - remove directory even if its not empty
+- `cat file` - Read all file
+- `:> file`  - clear file contents
+- `sed -e 's/test/quest' < file`  - replace every test with quest
+- `mv fromPath/ toPath/`    - self explanatory 
+- `bc`       - Calculator
+- `top`      - Display processes
+- `|`        - 'pipe' ,send output from one command to other
+- `>`        - 'stream' , you can also output in other command(like | ) or you can stream in file
+- `ps -aux`  - Snapshot of currently running processes
+- `kill PID` - Usefull with ps -aux , replace PID with well PID :D, it kills that process
 - `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
 - `sed -i '$ d' ./*` - Remove last line from all files in current dir
 - `find -name "* *" -type f | rename 's/ /_/g'` - Replace all spaces from filenames with ' _ '
@@ -31,8 +32,8 @@ https://tldr.ostera.io/
 - `ps -ef | grep python` - list all running python processes ('-ef' is for list all{e} and format it{f})
 
 ### cat and tac ( work with text files)
-- `cat file.txt` - display file (read text and sent it your standard output{terminal})
-- `cat file1.txt file2.txt` - display file1 and file2
+- `cat file.txt`               - display file (read text and sent it your standard output{terminal})
+- `cat file1.txt file2.txt`    - display file1 and file2
 - `cat file.txt > newfile.txt` - works as cat file.txt but shell redirects output to newfile.txt
 - `cat file1.txt file2.txt > newcombined.txt` - combine file1 and file2 text and output it to newcombined.txt
 - `cat file1.txt >> file2.txt` - append file1 to file2 ( read file1 and append to end of file2)
@@ -56,11 +57,11 @@ https://tldr.ostera.io/
 - `find .` -name file.deb -search in current folder
 
 ### grep (Matches patterns in input text. Supports simple patterns and regular expressions)
-- `grep --color "finding term" somefile.html`-this will print 'finding term' if there is and highlight it
-- `grep --color -n "finding term" somefile.html` -it will also prefix each matching line with line number
+- `grep --color "finding term" somefile.html`       -this will print 'finding term' if there is and highlight it
+- `grep --color -n "finding term" somefile.html`    -it will also prefix each matching line with line number
 - `grep --color -n -i "finding term" somefile.html` - use -i for case-insensitive match
-- `grep --color -n -i "finding term" *.html` -use * to expand search to all files that end with .html in cur dir
-- `grep --color -n -i -r "finding term" *.html` - use -r to make search recursively(to subdirectories)
+- `grep --color -n -i "finding term" *.html`        -use * to expand search to all files that end with .html in cur dir
+- `grep --color -n -i -r "finding term" *.html`     - use -r to make search recursively(to subdirectories)
 
 
 ### Date and time
@@ -115,8 +116,6 @@ For python
 
 For scripts
 - `alias mapit='python /home/keljo/github/LearningPython/Code/CodesFromBooks/Week3/Day20/mapIt.py'` - write mapit croatia to find croatia in google maps
-
-
 
 
 ### Useful commands when installed
