@@ -21,7 +21,10 @@ https://tldr.ostera.io/
 - `>`        -'stream' , you can also output in other command(like | ) or you can stream in file
 - `ps -aux`  -Snapshot of currently running processes
 - `kill PID` -Usefull with ps -aux , replace PID with well PID :D, it kills that process
-- `sed -e "s/ //g" -i test.txt` - Remove all spaces
+- `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
+- `sed -i '$ d' ./*` - Remove last line from all files in current dir
+- `find -name "* *" -type f | rename 's/ /_/g'` - Replace all spaces from filenames with ' _ '
+
 ### ps (Information about running processes)
 - `ps aux` - list all running processes
 - `ps aux | grep {{string}}` - search for a process that matches string
@@ -35,8 +38,6 @@ https://tldr.ostera.io/
 - `cat file1.txt >> file2.txt` - append file1 to file2 ( read file1 and append to end of file2)
 - `tac file.txt` -its same like cat but it reads file line by line BACKWARDS!
                   tac is really useful when you want output time logs 
-
-
 
 ### tail (Display the last part of a file)
 - `tail file.txt`       -read last 10 lines of file 'file.txt'
