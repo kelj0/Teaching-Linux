@@ -103,6 +103,10 @@ first go to folder where tor is
 
 ### My aliases
 
+Random
+- `alias ls='ls --color=auto'`
+
+
 For github
 - `alias gaa='git add --all'`
 - `alias gca='git commit -a'`
