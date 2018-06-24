@@ -23,7 +23,8 @@ https://tldr.ostera.io/
 - `ps -aux`  - Snapshot of currently running processes
 - `kill PID` - Usefull with ps -aux , replace PID with well PID :D, it kills that process
 - `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
-- `sed -i '$ d' ./*` - Remove last line from all files in current dir
+- `sed -i '$ d' ./* -i test.txt` - Remove last line from all files in current dir
+- `sed '/^\s*$/d' -i test.txt` - Remove all empty lines from file
 - `find -name "* *" -type f | rename 's/ /_/g'` - Replace all spaces from filenames with ' _ '
 
 ### ps (Information about running processes)
