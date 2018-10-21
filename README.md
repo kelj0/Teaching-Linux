@@ -21,11 +21,7 @@ https://tldr.ostera.io/
 - `|`        - 'pipe' ,send output from one command to other
 - `>`        - 'stream' , you can also output in other command(like | ) or you can stream in file
 - `ps -aux`  - Snapshot of currently running processes
-- `kill PID` - Usefull with ps -aux , replace PID with well PID :D, it kills that process
-- `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
-- `sed -i '$ d' ./* -i test.txt` - Remove last line from all files in current dir
-- `sed '/^\s*$/d' -i test.txt` - Remove all empty lines from file
-- `find -name "* *" -type f | rename 's/ /_/g'` - Replace all spaces from filenames with ' _ '
+- `kill PID` - Useful with ps -aux 
 
 ### ps (Information about running processes)
 - `ps aux` - list all running processes
@@ -81,6 +77,16 @@ https://tldr.ostera.io/
 - `du – Show`   -Directory space usage
 - `free`        –Show memory and swap usage
 
+### Useful commands
+- `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
+- `sed -i '$ d' ./* -i test.txt` - Remove last line from all files in current dir
+- `sed '/^\s*$/d' -i test.txt` - Remove all empty lines from file
+- `rename 's/ /_/g' *` - Replace all spaces from filenames with '_'
+- `sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
+- `sudo apt-get clean` - remove all .deb instalation files that were downloaded by apt
+- `python -m site --user-site` -points you on location of python site-packages directory 
+
+## Short guides
 ### Adding app to Applications
 lets say you want to add tor to applications cause you dont want to type ./start-tor...
 
@@ -93,7 +99,6 @@ first go to folder where tor is
 
 -congratz tor is under applications/internet
 
-
 ### Add permanent alias
 - open terminal
 - `nano ~/.bashrc` -open bashrc with your text editor
@@ -101,11 +106,3 @@ first go to folder where tor is
 - now you need to save it ( ctrl+x->Y->enter in nano)
 - Execute `. ~/.bashrc` in your terminal(there is space between `.` and `~/.bashrc`)
 - Check your alias with `alias` typed in terminal
-
-
-### Useful commands when installed
-
-- `sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
-- `sudo apt-get clean` - remove all .deb instalation files that were downloaded by apt
-- `python -m site --user-site` -points you on location of python site-packages directory 
-
