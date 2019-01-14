@@ -106,3 +106,53 @@ first go to folder where tor is
 - now you need to save it ( ctrl+x->Y->enter in nano)
 - Execute `. ~/.bashrc` in your terminal(there is space between `.` and `~/.bashrc`)
 - Check your alias with `alias` typed in terminal
+
+
+### CURL
+
+curl is used in command lines or scripts to transfer data
+
+
+Make simple request
+```
+curl http://127.0.0.1:5000/
+```
+
+curl can be used to specify the request type (GET,POST,PATCH,PUT,DELETE..) (more info)[https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods]
+```
+curl -X PATCH http://127.0.0.1:5000/echo
+```
+
+You can also specify the content type with curl
+```
+curl -H "Content-type: application/json" \
+-X POST http://127.0.0.1:5000/messages -d '{"message":"Hello Data"}'
+```
+
+Sending files ?
+```
+curl -H "Content-type: application/octet-stream" \
+-X POST http://127.0.0.1:5000/messages --data-binary @message.bin
+```
+
+To view HTTP headers specify the `-i` option
+```
+curl -i http://127.0.0.1:5000/hello
+```
+
+Authenticated request - use `-u`, to look at headers in request add `-v` 
+```
+curl -v -u "admin:secret" http://127.0.0.1:5000/secrets
+```
+
+##### To sum it up
+* `-X` 	specify HTTP request method e.g. POST
+* `-H` 	specify request headers e.g. "Content-type: application/json"
+* `-d` 	specify request data e.g. '{"message":"Hello Data"}'
+* `--data-binary` 	specify binary request data e.g. @file.bin
+* `-i` 	shows the response headers
+* `-u`	specify username and password e.g. "admin:secret"
+* `-v` 	enables verbose mode which outputs info such as request and response headers and errors
+
+
+**If you need more info see** (docs/book)[https://ec.haxx.se/]
