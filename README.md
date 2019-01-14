@@ -1,5 +1,5 @@
 # Linux
-My personal reference for using linux
+My personal reference for bash
 (WORK IN PROGRESS)!
 
 Very nice page that explains almost every command
