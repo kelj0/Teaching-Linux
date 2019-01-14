@@ -117,7 +117,7 @@ Make simple request
 curl http://127.0.0.1:5000/
 ```
 
-curl can be used to specify the request type (GET,POST,PATCH,PUT,DELETE..) (more info)[https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods]
+curl can be used to specify the request type (GET,POST,PATCH,PUT,DELETE..) [more info](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 ```
 curl -X PATCH http://127.0.0.1:5000/echo
 ```
@@ -154,4 +154,4 @@ curl -v -u "admin:secret" http://127.0.0.1:5000/secrets
 * `-v` 	enables verbose mode which outputs info such as request and response headers and errors
 
 
-**If you need more info see** (docs/book)[https://ec.haxx.se/]
+**If you need more info see [docs/book](https://ec.haxx.se/)**
