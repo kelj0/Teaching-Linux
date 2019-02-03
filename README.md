@@ -77,14 +77,27 @@ https://tldr.ostera.io/
 - `free`        –Show memory and swap usage
 
 ### Useful commands
-- `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
-- `sed -i '$ d' ./* -i test.txt` - Remove last line from all files in current dir
-- `sed '/^\s*$/d' -i test.txt` - Remove all empty lines from file
-- `rename 's/ /_/g' *` - Replace all spaces from filenames with '_'
-- `sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
-- `sudo apt-get clean` - remove all .deb instalation files that were downloaded by apt
-- `python -m site --user-site` -points you on location of python site-packages directory 
-- `kill $(ps aux | grep '[p]ython csp_build.py' | awk '{print $2}')`
+* `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
+* `sed -i '$ d' ./* -i test.txt` - Remove last line from all files in current dir
+* `sed '/^\s*$/d' -i test.txt` - Remove all empty lines from file
+* `rename 's/ /_/g' *` - Replace all spaces from filenames with '_'
+* `sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
+* `sudo apt-get clean` - remove all .deb instalation files that were downloaded by apt
+* `python -m site --user-site` -points you on location of python site-packages directory 
+* `kill $(ps aux | grep '[p]ython csp_build.py' | awk '{print $2}')`
+* read file line by line 
+```sh
+while read p; do 
+  echo "$p" 
+done < file.txt`
+```
+* find substring in string
+```sh
+string='My long string'
+if [[ $string == *"My long"* ]]; then
+  echo "It's there!"
+fi
+```
 
 Details how it works
 * The ps gives you the list of all the processes.
