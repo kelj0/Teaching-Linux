@@ -84,7 +84,6 @@ https://tldr.ostera.io/
 * `sudo apt-get --purge autoremove` - remove all duplicate/orphan packetes
 * `sudo apt-get clean` - remove all .deb instalation files that were downloaded by apt
 * `python -m site --user-site` -points you on location of python site-packages directory 
-* `kill $(ps aux | grep '[p]ython csp_build.py' | awk '{print $2}')`
 * read file line by line 
 ```sh
 while read p; do 
@@ -98,7 +97,7 @@ if [[ $string == *"My long"* ]]; then
   echo "It's there!"
 fi
 ```
-
+* `kill $(ps aux | grep '[p]ython csp_build.py' | awk '{print $2}')`
 Details how it works
 * The ps gives you the list of all the processes.
 * The grep filters that based on your search string, [p] is a trick to stop you picking up the actual grep process itself.
