@@ -76,6 +76,26 @@ https://tldr.ostera.io/
 - `du – Show`   -Directory space usage
 - `free`        –Show memory and swap usage
 
+### SSH,openssl..
+* `ssh user@hostname` -use's default ssh port(22)
+* `ssh user@hostname -p 1234` -non default port
+* Using RSA key in file
+```sh
+$ nano key
+- paste key,save
+$ chmod 600 key
+$ ssh -i key user@hostname -p 2220
+```
+* Sending data to port
+```sh
+$ openssl s_client -connect localhost:port
+
+Using file as auth
+$ openssl s_client -connect localhost:port -quiet < file_with_key
+-quiet option is for no s_client output
+```
+
+
 ### Useful commands
 * `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
 * `sed -i '$ d' ./* -i test.txt` - Remove last line from all files in current dir
