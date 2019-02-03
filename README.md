@@ -81,8 +81,7 @@ https://tldr.ostera.io/
 * `ssh user@hostname -p 1234` -non default port
 * Using RSA key in file
 ```sh
-$ nano key
-- paste key,save
+$ nano key  # -paste key,save
 $ chmod 600 key
 $ ssh -i key user@hostname -p 2220
 ```
@@ -90,11 +89,10 @@ $ ssh -i key user@hostname -p 2220
 ```sh
 $ openssl s_client -connect localhost:port
 
-Using file as auth
+# Using file as auth
 $ openssl s_client -connect localhost:port -quiet < file_with_key
--quiet option is for no s_client output
+# -quiet option is for no s_client output
 ```
-
 
 ### Useful commands
 * `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
