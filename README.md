@@ -124,6 +124,78 @@ Details how it works
   The output of that ps pipeline inside that construct above is the list of process IDs so 
   you end up with a command like kill 1234 1122 7654.
 
+### VIM notes
+```
+vim FILENAME -> open file for editing
+use 
+  k
+h   l
+  j
+to move around in normal mode
+
+-------
+|Modes|
+-------
+[i] insert mode 
+[A] append something to end of line
+[v] visual mode
+
+-----------------
+|Delete commants|
+-----------------
+[dw] a word, EXCLUDING first char
+[d$] to the end of line, INCLUDING the last char
+[de] to end of current word, INCLUDING the last char
+
+--------------------------
+|Using count for a motion|
+--------------------------
+[in normal mode]
+[2w] move cursor two forst forward
+[3e] move cursor to the end of the third word forward
+[0] go to start of the line
+
+----------------------------
+|Using count to delete more|
+----------------------------
+[d2w] delete the two UPPER CASE words
+
+--------------------
+|Operating on lines|
+--------------------
+[dd] delete a whole line
+[2dd] delete two lines(starting on line where cursor is and going down)
+
+------------------
+|The UNDO command|
+------------------
+[u] undo last command executed
+[U] return line to its original state
+
+------
+|REDO|
+------
+[<Ctrl-r>] undo the undo's
+
+-------------
+|PUT command|
+-------------
+[p] puts line below cursor(example dd to delete line  and p to put it back on differend place)
+
+------------------
+| Replace command|
+------------------
+[rx] replace char at cursor with x
+
+
+-----------------
+|Change operator|
+-----------------
+[ce] deletes the word from cursor till end and enters insert mode
+[c$] deletes the line till end and enters insert mode
+[c2w] can also be uset with numbers(this deletes 2 words after cursor and enters insert mode)
+
+```
 
 ## Short guides
 ### Adding app to Applications
