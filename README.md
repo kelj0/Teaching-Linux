@@ -195,6 +195,22 @@ to move around in normal mode
 [c$] deletes the line till end and enters insert mode
 [c2w] can also be uset with numbers(this deletes 2 words after cursor and enters insert mode)
 
+-----------------------------------
+| Cursor location and file status |
+-----------------------------------
+[<Ctrl-g>] message will appear at the bottom of page with the filename and position in the file
+[10G] go to 10nth line
+
+---------------
+| Split screen|
+---------------
+[<Ctrl-w>,h/j/k/l] depending where you want to switch
+[<Ctrl-w>,s] split current file horizontal
+[<Ctrl-w>,v] split current file vertical
+[<Ctrl-w>,Q] close one
+[:sp filename] horizontal split
+[:vsp filename] or [:vs filename] vertical split
+
 ```
 
 ## Short guides
