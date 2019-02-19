@@ -1,9 +1,14 @@
-## My personal reference for bash
+* [Bash](#bash)
+* [VIM-notes](#vim-notes)
+* [Short-guides](#short-guides)
+  * [Adding app to Applications](#add-app-to)
+  * [Add permanent alias](#add-alias)
+  * [Encrypt storage in Linux](#encrypt)
+  * [Configuring nano](#configure-nano)
+* [CURL](#curl)
+
+## Bash <a name="bash"></a>
 (WORK IN PROGRESS)!
-
-Very nice page that explains almost every command
-
-https://tldr.ostera.io/
 
 ### Basics
 
@@ -124,7 +129,7 @@ Details how it works
   The output of that ps pipeline inside that construct above is the list of process IDs so 
   you end up with a command like kill 1234 1122 7654.
 
-### VIM notes
+### VIM notes <a name="vim-notes"></a>
 ```
 vim FILENAME -> open file for editing
 use 
@@ -213,8 +218,8 @@ to move around in normal mode
 
 ```
 
-## Short guides
-### Adding app to Applications
+## Short guides <a name="short-guides"></a>
+### Adding app to Applications <a name="add-app-to"></a>
 lets say you want to add tor to applications cause you dont want to type ./start-tor...
 
 first go to folder where tor is
@@ -226,7 +231,7 @@ first go to folder where tor is
 
 -congratz tor is under applications/internet
 
-### Add permanent alias
+### Add permanent alias <a name="add-alias"></a>
 - open terminal
 - `nano ~/.bashrc` -open bashrc with your text editor
 - add on end  `alias ptpython='python3 -m ptpython'` for example, this is your alias now
@@ -235,7 +240,62 @@ first go to folder where tor is
 - Check your alias with `alias` typed in terminal
 
 
-### CURL
+### Encrypt storage in Linux <a name="encrypt"></a>
+* `sudo apt-get install cryptsetup`
+* `lsblk`  -find partition you want to encrypt
+* `sudo cryptsetup --verbose --verify-passphrase luksFormat /dev/sdb1`
+* `sudo cryptsetup luksOpen /dev/sdb1 sdb1` -use password you wrote in step before
+* `sudo fdisk -l` verify that disk is listed
+* `sudo mkfs.ext4 /dev/mapper/sdb1` - create new file system(recommend ext4)
+* `sudo tune2fs -m 0 /dev/mapper/sdb1` -ext4 reserves some space by default,but you wont need it if you dont run sys on it
+* `sudo mkdir /mnt/encrypted` - create folder to mount it on (/mnt is commont place to mount)
+* `sudo mount /dev/mapper/sdb1 /mnt/encrypted` - mount it  
+* `sudo touch /mnt/encrypted/test.txt` - create test file (you need root permision on encrypted partition)
+* ``sudo chown -R `whoami`:users /mnt/encrypted`` -you can change that permision with this command
+* `touch /mnt/encrypted/test.txt` - test it to see if you can create file without root
+
+When you are done working on encrypted disk
+
+* `sudo umount /dev/mapper/sdb1` - umount it
+* `sudo cryptsetup luksClose sdb1` - and close mapped device
+
+When you want to use it again
+* `lsblk` - check its name
+* `sudo cryptsetup luksOpen /dev/sdb1 sdb1` - open encrypted partition (enter passphrase)
+* `sudo mount /dev/mapper/sdb1 /mnt/encrypted` - and mount it
+
+#### Auto mount encrypted partitions during boot
+
+* `lsblk` - check NAME of encrypted partition (sdb1 etc)
+* `sudo cryptsetup luksUUID /dev/NAME` - get UUID
+* `sudo nano /etc/crypttab` - and add this line `NAME /dev/disk/by-uuid/UUID_from_step_before none luks`
+* `sudo mkdir /mnt/encrypted_disk` - create mount point 
+* `sudo nano /etc/fstab` - add this mnt point `/dev/mapper/NAME /mnt/encrypted_disk ext4 defaults 0 2`
+
+
+
+### Configuring nano <a name="configure-nano"></a>
+
+To configure global settings -> `sudo nano /etc/nanorc`
+
+Optionally configure nano on a user by user basis by creating a .nanorc file in their home directory
+
+```
+So just uncomment/add this lines to alter its behaviour, il write few of them that i personally 
+have but rest is on you..you are the one that will use this so make it for you :)
+```
+* Enable mouse support -> `set mouse`
+* Convert typed tabs to spaces -> `set tabstospaces`
+* Set tab size to 4 -> `set tabsize 4`
+* Text highlighting -> `include /usr/share/nano/*.nanorc` (if you want specific language here is [list](https://pastebin.com/eNBBkKuZ))
+* Binding keys '^'==CTRL and 'M'==ALT below are 2 examples
+
+```
+bind M-5 copytext all # alt+5 as copy
+bind M-2 uncut all    # alt+2 as paste
+```
+
+### CURL<a name="curl"></a>
 
 curl is used in command lines or scripts to transfer data
 
