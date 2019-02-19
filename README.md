@@ -187,7 +187,6 @@ to move around in normal mode
 ------------------
 [rx] replace char at cursor with x
 
-
 -----------------
 |Change operator|
 -----------------
@@ -210,6 +209,11 @@ to move around in normal mode
 [<Ctrl-w>,Q] close one
 [:sp filename] horizontal split
 [:vsp filename] or [:vs filename] vertical split
+
+---------------------------
+| Copy to system clipboard|
+---------------------------
+["+y] yankes selected text (in visual mode) to system clipboard
 
 ```
 
