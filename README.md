@@ -276,7 +276,12 @@ When you want to use it again
 * `sudo mkdir /mnt/encrypted_disk` - create mount point 
 * `sudo nano /etc/fstab` - add this mnt point `/dev/mapper/NAME /mnt/encrypted_disk ext4 defaults 0 2`
 
-
+#### Forgot password?
+* DONT UMOUNT DISC!
+* `dmsetup ls --target crypt` - check for open crypt devices -> this is <NAME> lets say name is sdc1
+* `(sudo dmsetup table --showkey /dev/mapper/sdc1 | awk '{print$5}' | xxd -r -p)> key.txt` - extract masterkey and convert to binary
+* `sudo cryptsetup luksAddKey /dev/sdc1 --master-key-file key.txt` - add new password to keyring
+* you have successfuly added new password to your storage
 
 ### Configuring nano <a name="configure-nano"></a>
 
