@@ -220,6 +220,13 @@ to move around in normal mode
 ---------------------------
 ["+y] yankes selected text (in visual mode) to system clipboard
 
+----------
+| Search |
+----------
+In command mode press [/] and start typing
+press enter to stay on that line(if you got match), if you escape you will
+return back on line when you pressed [/]
+To jump to next match press [n], [N] for previous
 ```
 
 ## Short guides <a name="short-guides"></a>
