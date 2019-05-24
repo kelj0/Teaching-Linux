@@ -10,18 +10,18 @@
 ## Bash <a name="bash"></a>
 (WORK IN PROGRESS)!
 
-[Basics](#basics)
-[Info about running processes](#ps-information-about-running-processes)
-[File system](#file-system)
-[Sorting](#sorting)
-[GREP](#grep-matches-patterns-in-input-text-supports-simple-patterns-and-regular-expressions)
-[Date and time](#date-and-time)
-[Users](#users)
-[Hardware usage](#hardware-usage)
-[SSH](#ssh)
-[Loops](#loops)
-[Using args in scripts](#using-args-in-scripts)
-[Useful crafted command)](#Useful-crafted-command)
+* [Basics](#basics)
+* [Info about running processes](#ps-information-about-running-processes)
+* [File system](#file-system)
+* [Sorting](#sorting)
+* [GREP](#grep-matches-patterns-in-input-text-supports-simple-patterns-and-regular-expressions)
+* [Date and time](#date-and-time)
+* [Users](#users)
+* [Hardware usage](#hardware-usage)
+* [SSH](#ssh)
+* [Loops](#loops)
+* [Using args in scripts](#using-args-in-scripts)
+* [Useful crafted command)](#Useful-crafted-command)
 
 ### Basics
 - `cd /usr/test` - change directory
@@ -331,6 +331,15 @@ In command mode press [/] and start typing
 press enter to stay on that line(if you got match), if you escape you will
 return back on line when you pressed [/]
 To jump to next match press [n], [N] for previous
+
+--------------------------------------------------
+|Insert text at beginning of multi-line selection|
+--------------------------------------------------
+* Press Esc to enter 'command mode'
+* Use Ctrl+V to enter visual block mode
+* Move Up/Downto select the columns of text in the lines you want to comment.
+* Then hit Shift+i and type the text you want to insert.
+* Then hit Esc, wait 1 second and the inserted text will appear on every line.
 ```
 
 ## Short guides <a name="short-guides"></a>
