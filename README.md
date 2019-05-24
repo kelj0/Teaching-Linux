@@ -21,7 +21,7 @@
 * [SSH](#ssh)
 * [Loops](#loops)
 * [Using args in scripts](#using-args-in-scripts)
-* [Useful crafted command)](#Useful-crafted-command)
+* [Useful crafted command](#useful-crafted-commands)
 
 ### Basics
 - `cd /usr/test` - change directory
@@ -44,7 +44,8 @@
 
 
 
-### ps (Information about running processes) - `ps aux` - list all running processes
+### ps (Information about running processes) 
+- `ps aux` - list all running processes
 - `ps aux | grep {{string}}` - search for a process that matches string
 - `ps -ef | grep python` - list all running python processes ('-ef' is for list all{e} and format it{f})
 
