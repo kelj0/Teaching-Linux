@@ -10,8 +10,20 @@
 ## Bash <a name="bash"></a>
 (WORK IN PROGRESS)!
 
-### Basics
+[Basics](#basics)
+[Info about running processes](#ps-information-about-running-processes)
+[File system](#file-system)
+[Sorting](#sorting)
+[GREP](#grep-matches-patterns-in-input-text-supports-simple-patterns-and-regular-expressions)
+[Date and time](#date-and-time)
+[Users](#users)
+[Hardware usage](#hardware-usage)
+[SSH](#ssh)
+[Loops](#loops)
+[Using args in scripts](#using-args-in-scripts)
+[Useful crafted command)](#Useful-crafted-command)
 
+### Basics
 - `cd /usr/test` - change directory
 - `mkdir test`   - make directory
 - `rmdir dir`    - remove directory
@@ -24,40 +36,82 @@
 - `top`      - Display processes
 - `|`        - 'pipe' ,send output from one command to other
 - `>`        - 'stream' , you can also output in other command(like | ) or you can stream in file
-- `ps -aux`  - Snapshot of currently running processes
 - `kill PID` - Useful with ps -aux 
+- `pwd`      - Print Working Directory  
+- `man something` - opens manual for something if exists
+- `wc file.txt`    - word count, counts number of lines,words and chars in files(from left to right)  
+- `wc -l file.txt` - output only number of lines in file.txt
 
-### ps (Information about running processes)
-- `ps aux` - list all running processes
+
+
+### ps (Information about running processes) - `ps aux` - list all running processes
 - `ps aux | grep {{string}}` - search for a process that matches string
 - `ps -ef | grep python` - list all running python processes ('-ef' is for list all{e} and format it{f})
 
-### cat and tac ( work with text files)
+### File system 
 - `cat file.txt`               - display file (read text and sent it your standard output{terminal})
 - `cat file1.txt file2.txt`    - display file1 and file2
 - `cat file.txt > newfile.txt` - works as cat file.txt but shell redirects output to newfile.txt
 - `cat file1.txt file2.txt > newcombined.txt` - combine file1 and file2 text and output it to newcombined.txt
 - `cat file1.txt >> file2.txt` - append file1 to file2 ( read file1 and append to end of file2)
+- `ls`       - list files in current directory
+- `ls -l`    - list files but use long listing format
+- `ls -lh`   - list files but use long listing format and make sizes human readable (5369>5.3K)
+- `ls -R -t` - list contents of directories recursivly, and sort by last time of change
+- `ls -a`    - list ALL files in current directory
 - `tac file.txt` -its same like cat but it reads file line by line BACKWARDS!
                   tac is really useful when you want output time logs 
-
-### tail (Display the last part of a file)
 - `tail file.txt`       -read last 10 lines of file 'file.txt'
 - `tail -n 5 file.txt`  -read last 5 lines of 'file.txt'
 - `tail -f myfile.txt`  -output last 10 lines of file and keep updating if it changes
 - `tail -f access.log | grep 23.10.160.10`  -useful example of using tail and grep to monitor a log in real life
-
-### cp (Copy files and folders)
 - `cp picture.jpg picture-02.jpg` -make copy of picture in working dir and name it picture-02
-- `cp /home/chuck/pictures/picture.jpg /home/chuck/backup/picture.jpg`
-   
-   this makes copy of /home/keljo/pictures/picture.jpg in the directory /home/keljo/backup
+- `cp /picture.jpg /backup/picture.jpg` - this makes copy of /picture.jpg in the directory /backup
+- `cp -r thesis thesis_backup` - copy directory and all its contents recursive  
+- `mv file.txt place/` - move file.txt to place
+- `rm file.txt`       - remove file.txt
+- `rm -r directory/` - remove directory recursively
+- `find / - name file.deb`        - search all disk for file.deb
+- `find . - name file.deb`        - search in current folder
+- `find . -type f`                - get listing of all the files
+- `find . -type d`                - get listing of all the directories   
+- `wc -l $(find . -name '*.txt')` - get line count of all files that end on .txt
+- `touch myfile.txt` - create new file
 
-### find (Find files under the given directory tree, recursively)
-- `find /` -name file.deb -search all disk for file.deb
-- `find .` -name file.deb -search in current folder
+### Sorting
+```
+cat lenghts.txt
+1
+3
+2
+```
+- `sort -n lenghts.txt` - outputs numerically sorted lenghts in this case (1 2 3) [consider space as newline]
+- `sort -n lenghts.txt > sorted.txt` - we can send output of sort to some file
+```
+cat fil.txt
+coho
+steelhead
+coho
+steelhead
+steelhead
+```
+- `uniq fil.txt` - outputs coho steelhead coho steelhead (uniq removes adjecent duplicated lines from its input
+- `sort fil.txt | uniq` - now we sorted fil.txt and we removed all duplicates
 
 ### grep (Matches patterns in input text. Supports simple patterns and regular expressions)
+```
+file.txt:
+The test is test
+This is very nice "They are"
+nice
+```
+- `grep The file.txt`
+```
+The test is test
+This is very nice "The test"
+```
+- `grep nice file.txt`   - nice
+- `grep -w The file.txt` - outputs only first line 'w' flag restricts matches to lines containing words on its own
 - `grep --color "finding term" somefile.html`       -this will print 'finding term' if there is and highlight it
 - `grep --color -n "finding term" somefile.html`    -it will also prefix each matching line with line number
 - `grep --color -n -i "finding term" somefile.html` - use -i for case-insensitive match
@@ -65,23 +119,25 @@
 - `grep --color -n -i -r "finding term" *.html`     - use -r to make search recursively(to subdirectories)
 
 
+
 ### Date and time
 - `date`   –Show the current date and time
 - `cal`    –Show this month's calendar
 - `uptime` –Show current uptime
 
-### Users,hardware usage
+### Users
 - `w`           –Display who is online
 - `whoami`      –Who you are logged in as
 - `finger user` –Display information about user (sudo apt-get install finger)
-- `uname -a`    –Show kernel information
+
+### Hardware usage
 - `cat /proc/cpuinfo` –CPU information
 - `cat /proc/meminfo` –Memory information
-- `df -h`       –Show disk usage
-- `du – Show`   -Directory space usage
-- `free`        –Show memory and swap usage
+- `uname -a`    -Show kernel information
+- `df -h`       -Show disk usage
+- `free`        -Show memory and swap usage
 
-### SSH,openssl..
+### SSH
 * `ssh user@hostname` -use's default ssh port(22)
 * `ssh user@hostname -p 1234` -non default port
 * Using RSA key in file
@@ -99,7 +155,55 @@ $ openssl s_client -connect localhost:port -quiet < file_with_key
 # -quiet option is for no s_client output
 ```
 
-### Useful commands
+### Loops
+```sh
+for thing in list_of_things
+do
+    operation_using $thing
+done
+
+$ for filename in file1.txt file2.txt
+> do    
+>     cat $filename
+> done
+# cats file1 and file2
+# we can also use oneliners (to separate two commands use ;)
+for filename in file1.txt file2.txt;do cat $filename; done
+
+for datafile in *.txt
+do
+    cat $datafile >> all.txt
+done
+
+# all text from files that end on .txt would be concatenated and saved to file all.txt
+
+# spaces in names
+for filename in "red dragon.dat" "purple unicorn.dat"
+do
+    cat "$filename"
+done
+```
+
+### Using args in scripts
+```sh
+#script1
+for filename in $1 $2 $3
+do
+    cat $filename
+fone
+
+$ bash script1.sh *.txt
+# this would cat first 3 files that end on .txt
+
+#script2
+echo $@
+
+$ bash script2.sh *.pdf
+#  this would echo all files in current directory that end on .pdf
+```
+
+
+### Useful crafted commands
 * `sed -e "s/ //g" -i test.txt` - Remove all spaces from file
 * `sed -i '$ d' ./* -i test.txt` - Remove last line from all files in current dir
 * `sed '/^\s*$/d' -i test.txt` - Remove all empty lines from file
