@@ -5,7 +5,7 @@
   * [Add permanent alias](#add-alias)
   * [Encrypt storage in Linux](#encrypt)
   * [Configuring nano](#configure-nano)
-* [CURL](#curl)
+* [cURL](#curl)
 
 ## Bash <a name="bash"></a>
 (WORK IN PROGRESS)!
@@ -143,10 +143,40 @@ This is very nice "The test"
 * `ssh user@hostname -p 1234` -non default port
 * Using RSA key in file
 ```sh
-$ nano key  # -paste key,save
+$ nvim key  # -paste key,save
 $ chmod 600 key
 $ ssh -i key user@hostname -p 2220
 ```
+* `ssh test@backupserver "ls results"` - running commands on a remote machine
+```sh
+# dont want to type password over and over again when ssh-ing to machine?
+# you can use ssh key, firstly check if you already have key pair on your machine
+$ cd ~/.ssh
+$ ls
+# if you see id_rsa.pub, you already have a key pair and don't need to create a new one
+# if you don't see id_rsa.pub, use following commant to generate a new key pair
+ssh-keygen -r rsa -C "your@email.com"
+# use default location
+# optional passphrase, used to encrypt key locally with 128bit AES
+# now you need to copy yout public key on any machines you would like to ssh wihout passphrase
+$ cat ~/.ssh/id_rsa.pub
+# good you see your key, now ssh machine
+$ ssh test@backupserver
+Password: *******
+# paste the content of cat ~/.ssh/id_rsa.pub to end of ~/.ssh/authorized_keys on other machine
+test> vim ~/.ssh/authorized_keys
+# after append the content, logout and try loging again
+test> exit
+$ ssh test@backupserver
+# thats it
+```
+```
+(s)ecure cp
+```
+* `scp results.dat test@backupserver:backups/results.dat` - copy results from our pc to backupserver 
+* `scp -r test@backupserver:backups/all ./backups` - copy "all" folder to our pc recursively
+
+
 * Sending data to port
 ```sh
 $ openssl s_client -connect localhost:port
@@ -425,14 +455,28 @@ bind M-5 copytext all # alt+5 as copy
 bind M-2 uncut all    # alt+2 as paste
 ```
 
-### CURL<a name="curl"></a>
+### cURL<a name="curl"></a>
 
 curl is used in command lines or scripts to transfer data
 
 
+Download file from internet
+```
+curl -o filename_for_local_machine target_url
+```
+
 Make simple request
 ```
 curl http://127.0.0.1:5000/
+```
+
+We could make the output cleaner by limiting the output of curl to just the file contents
+```sh
+curl -s url
+
+# we can pipe it nice to html2text to parse html and only get clean text from html
+# (you need to apt-get html2text)
+curl -s url | html2text
 ```
 
 curl can be used to specify the request type (GET,POST,PATCH,PUT,DELETE..) [more info](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
