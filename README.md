@@ -11,12 +11,12 @@
 (WORK IN PROGRESS)!
 
 * [Basics](#basics)
-* [Info about running processes](#ps-information-about-running-processes)
+* [Processes](#processes)
 * [File system](#file-system)
 * [Sorting](#sorting)
 * [GREP](#grep-matches-patterns-in-input-text-supports-simple-patterns-and-regular-expressions)
 * [Date and time](#date-and-time)
-* [Users](#users)
+* [Users and permisions](#users-and-permisions)
 * [Hardware usage](#hardware-usage)
 * [SSH](#ssh)
 * [Loops](#loops)
@@ -44,10 +44,15 @@
 
 
 
-### ps (Information about running processes) 
+### Processes 
 - `ps aux` - list all running processes
 - `ps aux | grep {{string}}` - search for a process that matches string
 - `ps -ef | grep python` - list all running python processes ('-ef' is for list all{e} and format it{f})
+- `./analyze results.dat &` - run that task in background
+- `jobs` - list all background running processes
+- `fg %1`   - bring process [1](listed with `jobs`) to foreground
+- `kill %1` - kill process [1](listed with `jobs`) to foreground
+- `bg %1`   - start process [1](listed with `jobs`) again, but in the background
 
 ### File system 
 - `cat file.txt`               - display file (read text and sent it your standard output{terminal})
@@ -76,6 +81,7 @@
 - `find . - name file.deb`        - search in current folder
 - `find . -type f`                - get listing of all the files
 - `find . -type d`                - get listing of all the directories   
+- `find . -type f -perm -u=x`     - get files that users can execute
 - `wc -l $(find . -name '*.txt')` - get line count of all files that end on .txt
 - `touch myfile.txt` - create new file
 
@@ -126,10 +132,14 @@ This is very nice "The test"
 - `cal`    –Show this month's calendar
 - `uptime` –Show current uptime
 
-### Users
+### Users and permisions
 - `w`           –Display who is online
 - `whoami`      –Who you are logged in as
 - `finger user` –Display information about user (sudo apt-get install finger)
+- `chmod u=rw file.sh` - give user(file owner) read and write permision on file.txt
+- `chmod g=x file.sh`  - give group execute permision on file.sh
+- `chmod a= file.sh`   - give "all" (everyone on the system who isn't file's ownewe or in its group) no permisions
+
 
 ### Hardware usage
 - `cat /proc/cpuinfo` –CPU information
