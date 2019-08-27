@@ -5,6 +5,7 @@
   * [Add permanent alias](#add-alias)
   * [Encrypt storage in Linux](#encrypt)
   * [Configuring nano](#configure-nano)
+  * [Installing virtualbox6.0 on Debian 10](#installvbox)
 * [cURL](#curl)
 
 ## Bash <a name="bash"></a>
@@ -463,6 +464,25 @@ have but rest is on you..you are the one that will use this so make it for you :
 ```
 bind M-5 copytext all # alt+5 as copy
 bind M-2 uncut all    # alt+2 as paste
+```
+
+### Installing virtualbox6.0 on Debian 10<a name="installvbox"><a/>
+```
+sudo apt update
+sudo apt upgrade
+```
+Import the Oracle public key
+```
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+```
+```
+Add "deb http://download.virtualbox.org/virtualbox/debian bionic contrib" to /etc/apt/sources.list
+(The VirtualBox packages for Debian 10 Buster and Ubuntu 18.04 bionic are same. 
+That’s why the repository is pointed to bionic.)
+
+sudo apt update
+sudo apt install virtualbox-6.0
 ```
 
 ### cURL<a name="curl"></a>
