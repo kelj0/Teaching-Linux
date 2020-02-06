@@ -1,4 +1,5 @@
 * [Bash](#bash)
+* [Networking](#networking)
 * [VIM-notes](#vim-notes)
 * [Short-guides](#short-guides)
   * [Adding app to Applications](#add-app-to)
@@ -274,6 +275,18 @@ Details how it works
 * The $(x) construct means to execute x then take its output and put it on the command line. 
   The output of that ps pipeline inside that construct above is the list of process IDs so 
   you end up with a command like kill 1234 1122 7654.
+
+### Networking <a name="networking"></a>
+```
+$ ip a                           # show all network devices
+$ ip link                        # dispaly link layer information
+$ ip -s link                     # -s statistics 
+$ ip -s link show enp3s0         # get information about a particular network interface 
+$ ip route                       # helps you see the route packets your network will take 
+$ (sudo) ip link set enp3s0 up   # enable network interface
+$ (sudo) ip link set enp3s0 down # disable network interface
+$ ip monitor                     # monitor and display the state of devices, addresess and routes
+```
 
 ### VIM notes <a name="vim-notes"></a>
 ```
