@@ -395,6 +395,17 @@ To jump to next match press [n], [N] for previous
 * Move Up/Downto select the columns of text in the lines you want to comment.
 * Then hit Shift+i and type the text you want to insert.
 * Then hit Esc, wait 1 second and the inserted text will appear on every line.
+
+----------------------------------------------
+| Find and replace with generated numeration |
+----------------------------------------------
+example: replaces all hello_world occurances with 
+hello_world1
+hello_world2
+hello_world3
+and so on..
+:let @a=1 | %s/hello_world/\='hello_world'.(@a+setreg('a',@a+1))/g 
+BEWARE: this overrides your register a
 ```
 
 ## Short guides <a name="short-guides"></a>
