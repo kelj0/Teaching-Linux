@@ -406,6 +406,23 @@ hello_world3
 and so on..
 :let @a=1 | %s/hello_world/\='hello_world'.(@a+setreg('a',@a+1))/g 
 BEWARE: this overrides your register a
+
+---------------------------------
+| Prepare for python dictionary |
+---------------------------------
+lets say you have
+"test1"
+"test2"
+"test3"
+...
+And we need 
+"test1": test1,
+"test2": test2,
+"test3": test3,
+...
+<ctrl + V> (select area)
+<:> s/\"\(.*\)\",/\"\1\"\: \1,/
+Quite simple but quite powerfull
 ```
 
 ## Short guides <a name="short-guides"></a>
